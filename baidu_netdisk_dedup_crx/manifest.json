@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "百度网盘文件分析 & 去除重复工具",
+  "version": "1.4.1",
+  "description": "递归扫描百度网盘指定目录，既可查重复也可导出全量文件清单。扫描结果自动落盘持久化（IndexedDB），关闭/刷新后可一键恢复；支持断点续扫、离线换判定标准重新分组、勾选决策持久化、分页筛选排序、导出 CSV(Excel)/JSON 线下研判、导入 CSV 按标记删除（进回收站，10天可恢复）。",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pan.baidu.com/*",
+        "https://yun.baidu.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": []
+}
